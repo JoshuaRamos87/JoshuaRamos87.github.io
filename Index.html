@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Portal - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #2D3748; /* Dark blue-gray background */
+            color: #E2E8F0; /* Light gray text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: #4A5568; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #c53030; border-radius: 10px; border: 2px solid #4A5568; }
+        ::-webkit-scrollbar-thumb:hover { background: #a02323; }
+
+        .portal-header h1 {
+            font-family: 'Press Start 2P', cursive;
+            color: #FBBF24; /* Yellow accent */
+            font-size: 2rem; /* Responsive font size */
+            text-shadow: 2px 2px #a02323; /* Darker red shadow for depth */
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (min-width: 640px) {
+            .portal-header h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        .portal-header p {
+            color: #A0AEC0; /* Lighter gray for subtitle */
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem; /* Increased gap for better spacing */
+            width: 100%;
+            max-width: 900px; /* Max width for the grid */
+        }
+
+        .nav-card {
+            background-color: #4A5568; /* Medium gray card background */
+            border-radius: 12px; /* More rounded corners */
+            overflow: hidden;
+            text-decoration: none;
+            color: #E2E8F0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #2D3748; /* Border to match body bg, subtle */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(197, 48, 48, 0.5); /* Red glow effect */
+            border-color: #c53030; /* Red border on hover */
+        }
+
+        .nav-card-image-container {
+            width: 100%;
+            height: 180px; /* Fixed height for image container */
+            background-color: #2D3748; /* Darker background for image area */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-card-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover to fill, might crop */
+        }
+        
+        /* Placeholder specific styling */
+        .nav-card-image-container .placeholder-icon {
+            font-size: 4rem; /* Larger icon */
+            color: #A0AEC0; /* Muted icon color */
+        }
+
+
+        .nav-card-content {
+            padding: 1.25rem; /* Increased padding */
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .nav-card-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.1rem;
+            color: #FBBF24; /* Yellow title */
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-card-description {
+            font-size: 0.85rem;
+            color: #CBD5E0; /* Slightly lighter gray for description */
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .nav-card-button {
+            display: inline-block;
+            background-color: #c53030; /* Red button */
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+            border: 2px solid #a02323; /* Darker red border */
+        }
+
+        .nav-card-button:hover {
+            background-color: #a02323; /* Darker red on hover */
+        }
+
+        /* Footer */
+        .portal-footer {
+            margin-top: 3rem;
+            padding: 1rem;
+            font-size: 0.8rem;
+            color: #A0AEC0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="portal-header text-center my-8 md:my-12">
+        <h1>Pokémon Portal</h1>
+        <p>Your gateway to Pokémon adventures and information!</p>
+    </header>
+
+    <main class="nav-card-grid">
+        <a href="Pokedex.html" class="nav-card">
+            <div class="nav-card-image-container">
+                <img src="https://placehold.co/600x400/c53030/FFFFFF?text=Pok%C3%A9dex&font=pressstart2p" alt="Pokédex Preview"
+                     onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'placeholder-icon\'>📖</span>';">
+            </div>
+            <div class="nav-card-content">
+                <div>
+                    <h2 class="nav-card-title">Pokédex</h2>
+                    <p class="nav-card-description">
+                        Explore detailed information about Pokémon from Generation 1 to 4.
+                        View stats, abilities, evolutions, and more!
+                    </p>
+                </div>
+                <span class="nav-card-button">Open Pokédex</span>
+            </div>
+        </a>
+
+        <a href="#" class="nav-card" onclick="event.preventDefault(); alert('Safari Zone coming soon!');">
+            <div class="nav-card-image-container">
+                <img src="https://placehold.co/600x400/38A169/FFFFFF?text=Safari+Zone&font=pressstart2p" alt="Safari Zone Preview"
+                      onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'placeholder-icon\'>🌳</span>';">
+            </div>
+            <div class="nav-card-content">
+                 <div>
+                    <h2 class="nav-card-title">Safari Zone</h2>
+                    <p class="nav-card-description">
+                        Adventure into the wild! A new experience where you can encounter
+                        and try to catch various Pokémon. (Coming Soon!)
+                    </p>
+                </div>
+                <span class="nav-card-button">Enter Safari Zone</span>
+            </div>
+        </a>
+
+        </main>
+
+    <footer class="portal-footer">
+        <p>&copy; <span id="currentYear"></span> Pokémon Fan Project. All Pokémon data from PokéAPI.</p>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
